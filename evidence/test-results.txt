@@ -1,0 +1,37 @@
+Runtime: 3.14.6 | packaged by Anaconda, Inc. | (main, Jul  9 2026, 14:29:05) [MSC v.1942 64 bit (AMD64)]
+
+test_ambiguous_and_missing_city (test_agent.DateAndWeatherTests.test_ambiguous_and_missing_city) ... ok
+test_chinese_dates_and_current_year (test_agent.DateAndWeatherTests.test_chinese_dates_and_current_year) ... ok
+test_future_horizon_not_fabricated (test_agent.DateAndWeatherTests.test_future_horizon_not_fabricated) ... ok
+test_heat_cold_fog_and_unknown_are_conservative (test_agent.DateAndWeatherTests.test_heat_cold_fog_and_unknown_are_conservative) ... ok
+test_historical_and_recent_data_are_labeled (test_agent.DateAndWeatherTests.test_historical_and_recent_data_are_labeled) ... ok
+test_invalid_dates (test_agent.DateAndWeatherTests.test_invalid_dates) ... ok
+test_known_city_does_not_require_geocoder (test_agent.DateAndWeatherTests.test_known_city_does_not_require_geocoder) ... ok
+test_missing_or_invalid_weather_is_rejected (test_agent.DateAndWeatherTests.test_missing_or_invalid_weather_is_rejected) ... ok
+test_rainy_data_and_units_are_grounded (test_agent.DateAndWeatherTests.test_rainy_data_and_units_are_grounded) ... ok
+test_sunny_outdoor_and_severe_postpone (test_agent.DateAndWeatherTests.test_sunny_outdoor_and_severe_postpone) ... ok
+test_unknown_city_uses_external_geocoder (test_agent.DateAndWeatherTests.test_unknown_city_uses_external_geocoder) ... ok
+test_cross_origin_and_arbitrary_files_are_rejected (test_agent.LocalHTTPTests.test_cross_origin_and_arbitrary_files_are_rejected) ... ok
+test_demo_route_and_json_validation (test_agent.LocalHTTPTests.test_demo_route_and_json_validation) ... ok
+test_post_requires_local_session_token (test_agent.LocalHTTPTests.test_post_requires_local_session_token) ... ok
+test_static_and_config_no_key_disclosure (test_agent.LocalHTTPTests.test_static_and_config_no_key_disclosure) ... ok
+test_demo_is_explicitly_synthetic (test_agent.PlacesAndAgentTests.test_demo_is_explicitly_synthetic) ... ok
+test_env_loader_does_not_execute_and_preserves_existing (test_agent.PlacesAndAgentTests.test_env_loader_does_not_execute_and_preserves_existing) ... ok
+test_full_deepseek_tool_loop (test_agent.PlacesAndAgentTests.test_full_deepseek_tool_loop) ... ok
+test_hallucinated_or_inappropriate_place_is_repaired (test_agent.PlacesAndAgentTests.test_hallucinated_or_inappropriate_place_is_repaired) ... ok
+test_map_failure_does_not_invent_places (test_agent.PlacesAndAgentTests.test_map_failure_does_not_invent_places) ... ok
+test_map_fallback_uses_real_ids_and_urls (test_agent.PlacesAndAgentTests.test_map_fallback_uses_real_ids_and_urls) ... ok
+test_missing_key (test_agent.PlacesAndAgentTests.test_missing_key) ... ok
+test_official_endpoint_model_and_secret_handling (test_agent.PlacesAndAgentTests.test_official_endpoint_model_and_secret_handling) ... ok
+test_rain_never_selects_palace_or_park (test_agent.PlacesAndAgentTests.test_rain_never_selects_palace_or_park) ... ok
+test_round_limit_and_truncation (test_agent.PlacesAndAgentTests.test_round_limit_and_truncation) ... ok
+test_severe_weather_no_trip (test_agent.PlacesAndAgentTests.test_severe_weather_no_trip) ... ok
+test_source_free_answer_triggers_tools_not_acceptance (test_agent.PlacesAndAgentTests.test_source_free_answer_triggers_tools_not_acceptance) ... ok
+test_sqlite_context_and_parameter_binding (test_agent.PlacesAndAgentTests.test_sqlite_context_and_parameter_binding) ... ok
+test_tool_args_and_sequence_validation (test_agent.PlacesAndAgentTests.test_tool_args_and_sequence_validation) ... ok
+test_tool_error_is_returned_to_model (test_agent.PlacesAndAgentTests.test_tool_error_is_returned_to_model) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 0.547s
+
+OK

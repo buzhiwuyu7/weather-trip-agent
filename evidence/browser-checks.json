@@ -1,0 +1,15 @@
+{
+  "browser": "ChatGPT in-app browser",
+  "checked_at": "2026-11-04T13:16:10+08:00",
+  "checks": [
+    "Page loaded with city/date/preference/mode fields",
+    "Missing DeepSeek key produced explicit error",
+    "Real Open-Meteo weather query rendered in browser",
+    "Advice Markdown downloaded successfully",
+    "Synthetic rain scenario displayed explicit fixture banner",
+    "Rain scenario recommended only two indoor venues",
+    "No browser error/warning logs were reported"
+  ],
+  "live_deepseek_verified": false,
+  "github_uploaded": false
+}

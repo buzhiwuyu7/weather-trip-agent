@@ -1,0 +1,5 @@
+PASS: ZIP integrity; no .env, runtime or old reading-agent files; GitHub workflow included.
+PASS: Extracted source ran the synthetic-rain CLI without installing packages.
+PASS: Extracted local server started and returned healthy status.
+PASS: Two expected indoor attractions were selected for synthetic drizzle.
+NOT RUN: authenticated DeepSeek model; GitHub remote workflow and upload.

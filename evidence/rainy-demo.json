@@ -1,0 +1,227 @@
+{
+  "mode": "demo",
+  "mode_label": "雨天情景演示（模拟天气，未调用DeepSeek）",
+  "model": null,
+  "generated_at": "2026-11-04T13:16:10+08:00",
+  "title": "北京零星小雨，优先室内游玩",
+  "summary": "有降水或较高降水概率，优先室内；不建议登山、水上活动和长时间露天运动。短时步行需结合临近天气。",
+  "weather": {
+    "city": {
+      "name": "北京",
+      "latitude": 39.9075,
+      "longitude": 116.39723,
+      "timezone": "Asia/Shanghai",
+      "country": "中国",
+      "location_source": "本地城市坐标表"
+    },
+    "date": "2026-11-04",
+    "weather_code": 51,
+    "description": "零星毛毛雨",
+    "temp_min_c": 7,
+    "temp_max_c": 13,
+    "precipitation_mm": 0.8,
+    "wind_max_kmh": 12,
+    "rain_probability_pct": 70,
+    "data_kind": "synthetic_fixture",
+    "data_label": "示例数据，非真实天气",
+    "retrieved_at": "未查询真实天气服务",
+    "source_name": "项目内置测试样例",
+    "source_url": "",
+    "source_docs": "https://open-meteo.com/en/docs",
+    "assessment": {
+      "level": "indoor",
+      "label": "优先室内游玩",
+      "reasons": [
+        "有降水或较高降水概率，优先室内；不建议登山、水上活动和长时间露天运动。短时步行需结合临近天气。"
+      ],
+      "rule_note": "项目经验规则，不是官方气象预警；日预报不能保证每个时段的天气。",
+      "tips": [
+        "出发前复查临近天气和当地气象预警。",
+        "门票、预约名额和当日开放状态尚未实时核实，请查看景点官方公告。"
+      ]
+    }
+  },
+  "recommendations": [
+    {
+      "id": "bj-national",
+      "name": "中国国家博物馆",
+      "environment": "indoor",
+      "category": "历史文化",
+      "description": "以馆内历史文化展陈为主。",
+      "caution": "入馆排队及交通接驳仍可能淋雨。请核实预约和开放公告。",
+      "source_url": "https://www.chnmuseum.cn/",
+      "source_type": "curated_catalog",
+      "catalog_version": "2026-11-04",
+      "match_score": 95,
+      "fit_reason": "主要活动在室内，可减少天气暴露；途中和排队仍需留意。",
+      "reason": "主要活动在室内，可减少天气暴露；途中和排队仍需留意。"
+    },
+    {
+      "id": "bj-science",
+      "name": "中国科学技术馆",
+      "environment": "indoor",
+      "category": "科学亲子",
+      "description": "以馆内科普展览和互动体验为主。",
+      "caution": "部分活动有单独预约要求，以馆方公告为准。",
+      "source_url": "https://www.cstm.org.cn/gzbsy/index.html",
+      "source_type": "curated_catalog",
+      "catalog_version": "2026-11-04",
+      "match_score": 95,
+      "fit_reason": "主要活动在室内，可减少天气暴露；途中和排队仍需留意。",
+      "reason": "主要活动在室内，可减少天气暴露；途中和排队仍需留意。"
+    }
+  ],
+  "excluded": [
+    {
+      "id": "bj-palace",
+      "name": "故宫博物院",
+      "environment": "mixed",
+      "category": "历史建筑",
+      "description": "宫殿、展厅与大面积露天院落结合。",
+      "caution": "不是全室内景点，雨天涉及露天步行，不作为避雨首选。",
+      "source_url": "https://www.dpm.org.cn/Visit.html",
+      "source_type": "curated_catalog",
+      "catalog_version": "2026-11-04",
+      "exclusion_reason": "涉及露天活动，当前天气优先选择室内"
+    },
+    {
+      "id": "bj-summer",
+      "name": "颐和园",
+      "environment": "outdoor",
+      "category": "园林自然",
+      "description": "以园林、湖区与户外步行为主。",
+      "caution": "雨雪天注意湿滑；大风雷雨时不安排湖边活动。",
+      "source_url": "https://www.summerpalace.net.cn/",
+      "source_type": "curated_catalog",
+      "catalog_version": "2026-11-04",
+      "exclusion_reason": "涉及露天活动，当前天气优先选择室内"
+    }
+  ],
+  "tips": [
+    "本页天气是人工测试样例，不代表北京2026年11月4日的真实天气。",
+    "出发前复查临近天气和当地气象预警。",
+    "门票、预约名额和当日开放状态尚未实时核实，请查看景点官方公告。"
+  ],
+  "trace": [
+    {
+      "tool": "get_weather",
+      "arguments": {
+        "city": "北京",
+        "date": "2026-11-04"
+      },
+      "result": {
+        "ok": true,
+        "data": {
+          "city": {
+            "name": "北京",
+            "latitude": 39.9075,
+            "longitude": 116.39723,
+            "timezone": "Asia/Shanghai",
+            "country": "中国",
+            "location_source": "本地城市坐标表"
+          },
+          "date": "2026-11-04",
+          "weather_code": 51,
+          "description": "零星毛毛雨",
+          "temp_min_c": 7,
+          "temp_max_c": 13,
+          "precipitation_mm": 0.8,
+          "wind_max_kmh": 12,
+          "rain_probability_pct": 70,
+          "data_kind": "synthetic_fixture",
+          "data_label": "示例数据，非真实天气",
+          "retrieved_at": "未查询真实天气服务",
+          "source_name": "项目内置测试样例",
+          "source_url": "",
+          "source_docs": "https://open-meteo.com/en/docs",
+          "assessment": {
+            "level": "indoor",
+            "label": "优先室内游玩",
+            "reasons": [
+              "有降水或较高降水概率，优先室内；不建议登山、水上活动和长时间露天运动。短时步行需结合临近天气。"
+            ],
+            "rule_note": "项目经验规则，不是官方气象预警；日预报不能保证每个时段的天气。",
+            "tips": [
+              "出发前复查临近天气和当地气象预警。",
+              "门票、预约名额和当日开放状态尚未实时核实，请查看景点官方公告。"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "tool": "search_attractions",
+      "arguments": {
+        "city": "北京",
+        "preference": "均衡"
+      },
+      "result": {
+        "ok": true,
+        "data": {
+          "city": "北京",
+          "source_mode": "本地景点数据库",
+          "retrieved_at": "2026-11-04T13:16:10+08:00",
+          "preference": "均衡",
+          "eligible": [
+            {
+              "id": "bj-national",
+              "name": "中国国家博物馆",
+              "environment": "indoor",
+              "category": "历史文化",
+              "description": "以馆内历史文化展陈为主。",
+              "caution": "入馆排队及交通接驳仍可能淋雨。请核实预约和开放公告。",
+              "source_url": "https://www.chnmuseum.cn/",
+              "source_type": "curated_catalog",
+              "catalog_version": "2026-11-04",
+              "match_score": 95,
+              "fit_reason": "主要活动在室内，可减少天气暴露；途中和排队仍需留意。"
+            },
+            {
+              "id": "bj-science",
+              "name": "中国科学技术馆",
+              "environment": "indoor",
+              "category": "科学亲子",
+              "description": "以馆内科普展览和互动体验为主。",
+              "caution": "部分活动有单独预约要求，以馆方公告为准。",
+              "source_url": "https://www.cstm.org.cn/gzbsy/index.html",
+              "source_type": "curated_catalog",
+              "catalog_version": "2026-11-04",
+              "match_score": 95,
+              "fit_reason": "主要活动在室内，可减少天气暴露；途中和排队仍需留意。"
+            }
+          ],
+          "excluded": [
+            {
+              "id": "bj-palace",
+              "name": "故宫博物院",
+              "environment": "mixed",
+              "category": "历史建筑",
+              "description": "宫殿、展厅与大面积露天院落结合。",
+              "caution": "不是全室内景点，雨天涉及露天步行，不作为避雨首选。",
+              "source_url": "https://www.dpm.org.cn/Visit.html",
+              "source_type": "curated_catalog",
+              "catalog_version": "2026-11-04",
+              "exclusion_reason": "涉及露天活动，当前天气优先选择室内"
+            },
+            {
+              "id": "bj-summer",
+              "name": "颐和园",
+              "environment": "outdoor",
+              "category": "园林自然",
+              "description": "以园林、湖区与户外步行为主。",
+              "caution": "雨雪天注意湿滑；大风雷雨时不安排湖边活动。",
+              "source_url": "https://www.summerpalace.net.cn/",
+              "source_type": "curated_catalog",
+              "catalog_version": "2026-11-04",
+              "exclusion_reason": "涉及露天活动，当前天气优先选择室内"
+            }
+          ],
+          "warnings": [],
+          "availability_checked": false
+        }
+      }
+    }
+  ],
+  "attraction_source_mode": "本地景点数据库",
+  "note": "推荐是备选景点清单，不是已验证交通和开放状态的一日线路。"
+}

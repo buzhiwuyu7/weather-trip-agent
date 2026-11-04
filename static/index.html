@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>晴游 · 天气与游玩助手</title><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body>
+<header class="topbar"><a class="brand" href="/" aria-label="晴游首页"><img src="/favicon.svg" alt="" width="38" height="38"><strong>晴游<span>WEATHER TRIP</span></strong></a><span class="connection"><i></i> 本地运行 · DeepSeek 驱动</span></header>
+<main>
+<section class="hero"><div><p class="eyebrow">LET THE WEATHER LEAD THE WAY</p><h1>看天气，<br>找一个好去处<span>。</span></h1><p class="intro">晴天去看风景，雨天走进展馆。<br>让真实天气和景点资料，帮你安排一次合适的出游。</p><div class="hero-tags"><span>01 查询天气</span><b>→</b><span>02 匹配景点</span><b>→</b><span>03 给出建议</span></div></div><div class="weather-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="art-sun"></div><div class="art-cloud cloud-one"></div><div class="art-cloud cloud-two"></div><div class="art-caption"><span>FOLLOW THE FORECAST</span><strong>好天气有好去处<br>下雨也有好安排</strong></div><div class="art-coordinate">39.90° N &nbsp; 116.40° E</div></div></section>
+<section class="workspace">
+<aside class="planner"><div class="section-label"><span>开始计划</span><span>YOUR NEXT STOP</span></div><h2>这次想去哪里？</h2><form id="trip-form">
+<label for="city">目的地城市</label><input id="city" name="city" value="北京" list="cities" maxlength="100" required placeholder="如：北京、上海、Paris, France"><datalist id="cities"></datalist>
+<label for="date">游玩日期</label><input id="date" name="date" type="date" required><p class="field-help">支持未来16天，也可查询历史日期；显示完整年份，避免混淆日期。</p>
+<label for="preference">游玩偏好</label><select id="preference"><option>均衡</option><option>室内文化</option><option>户外风景</option><option>亲子轻松</option></select>
+<label for="question">补充需求 <span class="optional">选填</span></label><textarea id="question" rows="2" maxlength="2000" placeholder="例如：想了解历史，尽量少在雨中步行"></textarea>
+<label for="mode">运行方式</label><select id="mode"><option value="tools">实时查询与规则推荐 · 无需密钥</option><option value="deepseek">DeepSeek AI 规划 · 需要密钥</option></select>
+<div id="key-fields" hidden><label for="api-key">DeepSeek API Key <span class="optional" id="key-status">仅用于本次请求</span></label><input id="api-key" type="password" autocomplete="off" placeholder="输入官网 API 密钥，或使用本地配置"><label for="model">DeepSeek 模型</label><input id="model" value="deepseek-flash" maxlength="100"><p class="field-help">只请求 DeepSeek 官网接口。密钥不保存到浏览器或报告。</p></div>
+<button id="submit" class="primary" type="submit"><span>查询天气与推荐</span><b>↗</b></button><button class="demo-button" id="demo" type="button">查看「北京零星小雨」示例 <span>非实时天气</span></button>
+</form><div class="planner-note"><strong>有依据的推荐</strong><p>天气来自 Open-Meteo。景点查询本地数据库或 OpenStreetMap，不靠模型猜测天气。</p></div></aside>
+<section class="results" aria-live="polite" aria-busy="false" id="results"><div class="empty" id="empty"><div class="empty-icon">↗</div><p class="eyebrow">A LITTLE PLAN, A BETTER DAY</p><h2>下一站，由天气决定。</h2><p>选择城市和日期，查看适合当天条件的景点。<br>每项推荐都会说明理由，并附上可核实的来源。</p><div class="empty-cards"><span>☀ 晴天 · 城市漫步</span><span>☂ 雨天 · 室内探索</span><span>❄ 降温 · 减少暴露</span></div></div>
+<div id="loading" class="loading" hidden><div class="spinner"></div><h2>正在查询并匹配景点</h2><p>天气、景点与建议需要依次处理，请稍候。</p><span id="elapsed">已等待 0 秒</span></div><div id="error" class="error" role="alert" hidden></div>
+<div id="result" hidden><div class="result-top"><span id="mode-badge" class="badge"></span><div class="export-actions"><button id="download-md" type="button">下载建议 ↓</button><button id="download-json" type="button">工具记录 ↓</button></div></div><div class="demo-notice" id="demo-notice" hidden>情景演示：以下天气为模拟小雨数据，不代表该日期的真实天气。</div><div class="result-heading"><div><p id="location-label" class="eyebrow"></p><h2 id="result-title"></h2></div><span id="weather-symbol" class="weather-symbol" aria-hidden="true"></span></div><p id="weather-kind" class="field-help"></p>
+<div class="metrics"><div class="temperature"><small>天气 / 温度区间</small><strong id="temperature"></strong><span id="description"></span></div><div><small>当日累计降水</small><strong id="rain"></strong><span id="probability"></span></div><div><small>当日最大风速</small><strong id="wind"></strong><span>公里 / 小时</span></div></div>
+<div class="assessment" id="assessment"><span class="assessment-dot"></span><div><strong id="assessment-label"></strong><p id="summary"></p></div></div>
+<div class="recommendation-heading"><h3>适合这次天气的去处</h3><span id="recommendation-count"></span></div><div id="places" class="place-list"></div>
+<div class="tips"><h3>出发前，记住这些</h3><ul id="tips-list"></ul></div><details id="excluded-section"><summary>为什么没有推荐其他景点？</summary><div id="excluded"></div></details><details class="trace-details"><summary>查看工具调用与数据来源</summary><div id="source-links"></div><pre id="trace"></pre></details><p id="result-note" class="result-note"></p></div>
+</section></section>
+<footer><span>晴游 WEATHER TRIP</span><p>按天气做选择，给旅途留一点从容。</p><span>课程项目 · Function Calling Agent</span></footer>
+</main></body></html>
